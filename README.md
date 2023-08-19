@@ -1,10 +1,10 @@
 # AIDI_1000_Final_Project
 
-Research Paper Link: https://arxiv.org/pdf/1904.08067v5.pdf
+* Research Paper Link: https://arxiv.org/pdf/1904.08067v5.pdf
 
-Research Paper Github Link: https://github.com/kk7nc/Text_Classification/tree/master
+* Research Paper Github Link: https://github.com/kk7nc/Text_Classification/tree/master
 
-Dataset Link: https://github.com/kk7nc/Text_Classification/blob/master/Data/Download_Glove.py
+* Dataset Link: https://github.com/kk7nc/Text_Classification/blob/master/Data/Download_Glove.py
 
 # Project Goal:
 Text feature extraction and pre-processing for classification algorithms are very significant. In this section, we start to talk about text cleaning since most of documents contain a lot of noise. In this part, we discuss two primary methods of text feature extractions- word embedding and weighted word.

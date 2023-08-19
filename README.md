@@ -12,124 +12,31 @@ Text feature extraction and pre-processing for classification algorithms are ver
 4)Capitalization
 
 # Steps to run our code:
-1) Step:1 Data Loading
-   from __future__ import print_function
+1) Import the dataset from the above link.
+2) Load the datasets and try to perform different algorithms.
 
-import os, sys, tarfile
-import numpy as np
-import zipfile
+# Tools, Software and Libraries
 
-if sys.version_info >= (3, 0, 0):
-    import urllib.request as urllib  # ugly but works
-else:
-    import urllib
+  1. Jupyter Notebook
 
-print(sys.version_info)
+  2. Numpy
 
-# image shape
+  3. Pandas
 
+  4. Seaborn
 
-# path to the directory with the data
-DATA_DIR = '.\Glove'
+  5. Matplotlib
 
-# url of the binary data
+  6. Scikit-learn
+  
+  7. Transformers
+  
+  8. Torch
 
+  9. sklearn.metrics
+      
+  10. Glove
 
+We implemented all the algorithms and also added our own algorithm to compare the accuracy and to find out which algorithms works best for the text classification on chosen dataset.
 
-# path to the binary train file with image data
-
-
-def download_and_extract(data='Wikipedia'):
-    """
-    Download and extract the GloVe
-    :return: None
-    """
-
-    if data=='Wikipedia':
-        DATA_URL = 'http://nlp.stanford.edu/data/glove.6B.zip'
-    elif data=='Common_Crawl_840B':
-        DATA_URL = 'http://nlp.stanford.edu/data/wordvecs/glove.840B.300d.zip'
-    elif data=='Common_Crawl_42B':
-        DATA_URL = 'http://nlp.stanford.edu/data/wordvecs/glove.42B.300d.zip'
-    elif data=='Twitter':
-        DATA_URL = 'http://nlp.stanford.edu/data/wordvecs/glove.twitter.27B.zip'
-    else:
-        print("prameter should be Twitter, Common_Crawl_42B, Common_Crawl_840B, or Wikipedia")
-        exit(0)
-
-
-    dest_directory = DATA_DIR
-    if not os.path.exists(dest_directory):
-        os.makedirs(dest_directory)
-    filename = DATA_URL.split('/')[-1]
-    filepath = os.path.join(dest_directory, filename)
-    print(filepath)
-
-    path = os.path.abspath(dest_directory)
-    if not os.path.exists(filepath):
-        def _progress(count, block_size, total_size):
-            sys.stdout.write('\rDownloading %s %.2f%%' % (filename,
-                                                          float(count * block_size) / float(total_size) * 100.0))
-            sys.stdout.flush()
-
-        filepath, _ = urllib.urlretrieve(DATA_URL, filepath)#, reporthook=_progress)
-
-
-        zip_ref = zipfile.ZipFile(filepath, 'r')
-        zip_ref.extractall(DATA_DIR)
-        zip_ref.close()
-    return path
-
-
-from __future__ import print_function
-
-import os, sys, tarfile
-import numpy as np
-
-if sys.version_info >= (3, 0, 0):
-    import urllib.request as urllib
-else:
-    import urllib
-
-print(sys.version_info)
-
-# image shape
-
-
-# path to the directory with the data
-DATA_DIR = '.\data_WOS'
-
-# url of the binary data
-DATA_URL = 'http://kowsari.net/WebOfScience.tar.gz'
-
-
-# path to the binary train file with image data
-
-
-def download_and_extract():
-    """
-    Download and extract the WOS datasets
-    :return: None
-    """
-    dest_directory = DATA_DIR
-    if not os.path.exists(dest_directory):
-        os.makedirs(dest_directory)
-    filename = DATA_URL.split('/')[-1]
-    filepath = os.path.join(dest_directory, filename)
-
-
-    path = os.path.abspath(dest_directory)
-    if not os.path.exists(filepath):
-        def _progress(count, block_size, total_size):
-            sys.stdout.write('\rDownloading %s %.2f%%' % (filename,
-                                                          float(count * block_size) / float(total_size) * 100.0))
-            sys.stdout.flush()
-
-        filepath, _ = urllib.urlretrieve(DATA_URL, filepath, reporthook=_progress)
-
-        print('Downloaded', filename)
-
-        tarfile.open(filepath, 'r').extractall(dest_directory)
-    return path
-
-
+  
